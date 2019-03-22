@@ -1,0 +1,13 @@
+<a class=logo rel="author" href="{{ "/" | relative_url }}">
+{%- assign components = site.title| split: ' ' -%}
+{%- for component in components -%}
+  {%- if forloop.index <= 2 -%}
+    <span class="parenthesis">(</span>{{ component }}
+  {%- else -%}
+    <span class="separator">, </span>{{ component }}
+  {%- endif -%}
+  {%- if forloop.first or forloop.last -%}
+    <span class="parenthesis">)</span>
+  {%- endif -%}
+{%- endfor -%}
+</a>
